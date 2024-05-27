@@ -15,7 +15,7 @@ The input data can be added to the **travels.xlsx**.
 ### MODULES
 
 - read_travels.py
-- single_travel.py. 
+- single_travel.py
   - Given trip id, it will calculate the length and will return details such as destination.
 - general_calendar.py
   - It can calcuate the length of traveling between a range of dates. 
