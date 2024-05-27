@@ -14,7 +14,7 @@ if option==1:
 
 
     range_start, range_end, relevant_ids, full_length = run_single_range(
-        range_start = datetime.datetime(2023,12,30), 
+        range_start = datetime.datetime(2023,4,30), 
         range_end = datetime.datetime(2024,12,30))
 
     #tests(range_start, range_end)

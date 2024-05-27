@@ -86,6 +86,7 @@ def run_single_range(range_start, range_end):
         else:
             all_travels=pd.concat([all_travels,current_travel])
         count+=1
+
     
     print(Style.RESET_ALL, f"""\n ********FULL DATA***********\n\n, {all_travels}""")
 
