@@ -92,14 +92,40 @@ def run_single_range(range_start, range_end):
     return range_start, range_end, relevant_ids, full_length
 
 
+def tests(range_start, range_end):
+
+    if range_start == datetime.datetime(2023,7,15) and range_end == datetime.datetime(2023,9,23):
+
+        try:
+            assert(full_length.days==31)
+        except:
+            raise Exception("If you see this error you have a BUG! YOU SHOULD HAVE GOTTON 31 DAYS")
+
+      
 if __name__=="__main__":
 
 
-    range_start, range_end, relevant_ids, full_length = run_single_range(range_start = datetime.datetime(2023,7,24), range_end = datetime.datetime(2023,8,25))
+    range_start, range_end, relevant_ids, full_length = run_single_range(range_start = datetime.datetime(2023,6,25), range_end = datetime.datetime(2024,7,7))
 
-    print(Style.RESET_ALL,f"""
-        Travel IDs between          {range_start} and 
-          {range_end},
-          are {relevant_ids}
-          and in total {full_length} days""")
-    
+    #tests(range_start, range_end)
+
+    print("""
+        *************************************************************
+          """,
+        """\n 
+        Between""", Fore.MAGENTA, f"{range_start.date()}",Fore.WHITE,  "and", Fore.MAGENTA, f"{range_end.date()}\n",
+        Style.RESET_ALL,f""" 
+        IDs are {relevant_ids}\n""",
+        """
+        In total""", Fore.MAGENTA, f"{full_length.days}", Fore.WHITE, "days \n",
+        """
+        *************************************************************
+          """)
+
+ 
+    if full_length.days>=175:
+        print(Fore.RED,f"""
+              *****************************************
+              ALMOST 6 MONTHS OF TRAVELLING THIS YEAR
+              *****************************************
+              """)

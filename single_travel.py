@@ -67,20 +67,20 @@ class Travel:
             print("""
             Travel is fully within range""")
             self.length = pd.to_datetime(travel_dates.iloc[-1]) - pd.to_datetime(travel_dates.iloc[0])
-        elif (year_start>pd.to_datetime(travel_dates.iloc[0])) & (
-            year_start<pd.to_datetime(travel_dates.iloc[-1])) & (
-            year_end>pd.to_datetime(travel_dates.iloc[-1])):
+        elif (year_start>=pd.to_datetime(travel_dates.iloc[0])) & (
+            year_start<=pd.to_datetime(travel_dates.iloc[-1])) & (
+            year_end>=pd.to_datetime(travel_dates.iloc[-1])):
             print("""
             Travel starts within range but ends after""")
             self.length = pd.to_datetime(travel_dates.iloc[-1]) - year_start
-        elif (year_end<pd.to_datetime(travel_dates.iloc[-1])) & (
-            year_end>pd.to_datetime(travel_dates.iloc[0])) & ( 
-            year_start<pd.to_datetime(travel_dates.iloc[0])) :
+        elif (year_end<=pd.to_datetime(travel_dates.iloc[-1])) & (
+            year_end>=pd.to_datetime(travel_dates.iloc[0])) & ( 
+            year_start<=pd.to_datetime(travel_dates.iloc[0])) :
             print("""
             travel starts before range but ends within""")
             self.length = year_end - pd.to_datetime(travel_dates.iloc[0]) 
-        elif (year_end<pd.to_datetime(travel_dates.iloc[0])) | (
-            year_start>pd.to_datetime(travel_dates.iloc[-1])) :
+        elif (year_end<=pd.to_datetime(travel_dates.iloc[0])) | (
+            year_start>=pd.to_datetime(travel_dates.iloc[-1])) :
             print("""
             Travel is outside of the date range""")
             self.length = datetime.timedelta(days=0)

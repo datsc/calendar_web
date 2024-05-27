@@ -6,13 +6,12 @@ class my_calendar:
 
     """This class read excel sheet and finds the current maximum travel id."""
 
-    def __init__(self, file="Planning_travels.xlsx"):
+    def __init__(self, file="travels.xlsx"):
         self.file=file
         
 
     def read_file(self):
         self.out_df = pd.read_excel(self.file, 
-                              sheet_name='Summary_Dates', 
                               header=0,
                               parse_dates=True)
         self.out_df = self.out_df.drop('Airlines',axis=1)
