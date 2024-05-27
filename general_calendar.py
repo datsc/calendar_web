@@ -106,7 +106,9 @@ def tests(range_start, range_end):
 if __name__=="__main__":
 
 
-    range_start, range_end, relevant_ids, full_length = run_single_range(range_start = datetime.datetime(2023,6,25), range_end = datetime.datetime(2024,7,7))
+    range_start, range_end, relevant_ids, full_length = run_single_range(
+        range_start = datetime.datetime(2023,6,25), 
+        range_end = datetime.datetime(2024,7,7))
 
     #tests(range_start, range_end)
 
