@@ -1,4 +1,4 @@
 #travels.xlsx
-outfile.txt
+data/output/outfile.txt
 nonweb_test_single_travel.py
 __pycache__

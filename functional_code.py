@@ -3,7 +3,7 @@ from read_travels import my_calendar
 from single_travel import Travel, run_single_travel
 from colorama import Fore,Style
 import pandas as pd
-from general_calendar import GeneralCalendar, tests, run_single_range
+from general_calendar import GeneralCalendar, run_single_range
 
 
 
@@ -34,12 +34,13 @@ if option==1:
 
     if full_length.days>=179:
         print(Fore.RED,f"""
-              *****************************************
-              DANGER ZONE: You are over the limit!!!!!!
-              *****************************************
+              ********************************************
+                    6 MONTHS OF TRAVELING THIS YEAR!
+              ********************************************
               """)
 
-with open("outfile.txt","a") as f:
+
+with open("data/output/outfile.txt","a") as f:
     
     current_string = str(''.join([f"""
         *************************************************************

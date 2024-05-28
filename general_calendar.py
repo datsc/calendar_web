@@ -29,6 +29,7 @@ class GeneralCalendar:
     def get_travel_ids(self):
         self.ids = self.whole_calendar[self.whole_calendar['Date'].between(
             self.date_interested_year_start, self.date_interested_end)]['Travel_ID']
+
         print(f"""
               *****************************************
               *****************************************
@@ -41,16 +42,10 @@ class GeneralCalendar:
               *****************************************
               *****************************************
               """)
+
         return self.ids
 
-    
-    """def calculate_number_of_days(self):
-        "wrong"
-        self.nr_days = self.end_date, self.start_date
-        self.nr_days_limited = self.date_interested_end - self.single_date_interested_start
-        
-        return self.nr_days_limited
-       """ 
+
 
 def run_single_range(range_start, range_end):
 
@@ -62,7 +57,6 @@ def run_single_range(range_start, range_end):
             date_interested_end=range_end)
     
     relevant_ids = set(cal_of_current.get_travel_ids())
-    print('here', relevant_ids)
    
     count = 0
     for id in relevant_ids:
@@ -96,7 +90,6 @@ if __name__=="__main__":
 
     range_start, range_end, relevant_ids, full_length = run_single_range(range_start = datetime.datetime(2023,6,25), range_end = datetime.datetime(2024,7,7))
 
-    #tests(range_start, range_end)
 
     print("""
         *************************************************************
