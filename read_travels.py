@@ -4,17 +4,18 @@ import datetime
 
 class my_calendar:
 
-    """This class read excel sheet and finds the current maximum travel id."""
+    """This class reads excel sheet and finds the current maximum travel id."""
 
-    def __init__(self, file="travels.xlsx"):
+    def __init__(self, file="./data/input/travels.xlsx"):
         self.file=file
         
 
     def read_file(self):
         self.out_df = pd.read_excel(self.file, 
+                              sheet_name='Summary_Dates', 
                               header=0,
                               parse_dates=True)
-        self.out_df = self.out_df.drop('Airlines',axis=1)
+        self.out_df = self.out_df[["Date","From","To","Travel_ID"]]
         self.out_df['Date'] = pd.to_datetime(self.out_df['Date'], format="%d%m%Y")
         return self.out_df
     
