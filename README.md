@@ -24,7 +24,7 @@ The input data can be added to the **travels.xlsx** which then need to be rename
   - The dates can be adjusted in the __main__ section of the code.
 - functional_code.
   - The overall calculator, for not it does the same with general_calendar.py but it will be extended to go through months of ranges automatically.
-- test_single_travel.py only works for the non-web version. The public user can use `_web` version.
+- non_web_test_single_travel.py only works for the non-web version. The public user can use `_web` version.
 
 
 
