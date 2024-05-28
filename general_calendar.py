@@ -86,29 +86,15 @@ def run_single_range(range_start, range_end):
         else:
             all_travels=pd.concat([all_travels,current_travel])
         count+=1
-
     
     print(Style.RESET_ALL, f"""\n ********FULL DATA***********\n\n, {all_travels}""")
 
     return range_start, range_end, relevant_ids, full_length
 
 
-def tests(range_start, range_end):
-
-    if range_start == datetime.datetime(2023,7,15) and range_end == datetime.datetime(2023,9,23):
-
-        try:
-            assert(full_length.days==31)
-        except:
-            raise Exception("If you see this error you have a BUG! YOU SHOULD HAVE GOTTON 31 DAYS")
-
-      
 if __name__=="__main__":
 
-
-    range_start, range_end, relevant_ids, full_length = run_single_range(
-        range_start = datetime.datetime(2023,6,25), 
-        range_end = datetime.datetime(2024,7,7))
+    range_start, range_end, relevant_ids, full_length = run_single_range(range_start = datetime.datetime(2023,6,25), range_end = datetime.datetime(2024,7,7))
 
     #tests(range_start, range_end)
 
@@ -125,10 +111,9 @@ if __name__=="__main__":
         *************************************************************
           """)
 
- 
-    if full_length.days>=175:
+    if full_length.days>=179:
         print(Fore.RED,f"""
-              *****************************************
-              ALMOST 6 MONTHS OF TRAVELLING THIS YEAR
-              *****************************************
+              ********************************************
+                    6 MONTHS OF TRAVELING THIS YEAR!
+              ********************************************
               """)

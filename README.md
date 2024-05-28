@@ -6,11 +6,12 @@ This code reads travel information from an Excel file and calculates the number 
 
 ### EXAMPLE DATA
 
-The input data can be added to the **travels.xlsx**.
+The input data can be added to the **travels.xlsx** which then need to be renamed Planning_travels.xlsx
 - Date (the cell type is date in Excel and it is a datetime object in python.
 - From and To are the cities one traveled between.
-- Airlines (it is not functional at the moment but the column needs to be there.
+- Airlines (it is redundant for the moment).
 - Travel ID corresponds to a single return trip. eg. If you traveled from Monaco to Mexico and then back, they both need to be labeled with the same ID, so that the code recognises this as a single trip of which it needs to calculate the length of.
+
 
 ### MODULES
 
@@ -22,6 +23,7 @@ The input data can be added to the **travels.xlsx**.
   - The dates can be adjusted in the __main__ section of the code.
 - functional_code.
   - The overall calculator, for not it does the same with general_calendar.py but it will be extended to go through months of ranges automatically.
+- test_single_travel.py only works for the non-web version. 
 
 ### USING THE CODE
 
